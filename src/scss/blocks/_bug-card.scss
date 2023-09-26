@@ -1,0 +1,52 @@
+.bug-card {
+    padding: 10px;
+    color: #4c617f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #d4dae3;
+    cursor: pointer;
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+    }
+    &__number {
+        width: 26px;
+        height: 26px;
+        line-height: 20px;
+        font-size: 10px;
+        border: 2px solid #fff;
+        background: #2ea2f6;
+        margin-right: 5px;
+        font-family: Gordita-Medium;
+        font-weight: 500;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    &__author {
+        flex-grow: 1; /* Занимает оставшееся место в строке */
+        margin-right: 10px;
+        font-family: Gordita-Medium;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        color: #1c232d;
+    }
+    &__date {
+        font-size: 10px;
+        line-height: 20px;
+        color: #778aa7;
+        font-family: Gordita-Medium;
+        font-weight: 500;
+    }
+    &__title {
+        font-size: 12px;
+        line-height: 18px;
+        font-family: Manrope-SemiBold;
+        font-weight: 600;
+        color: #303d4e;
+    }
+  }

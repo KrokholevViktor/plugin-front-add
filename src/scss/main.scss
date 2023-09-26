@@ -1,0 +1,43 @@
+/* Base */
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/base";
+@import "./base/utils";
+@import "./base/containers";
+@import "./base/sticky-footer";
+
+/* Blocks */
+@import "./blocks/*.scss";
+
+
+body {
+    background-color: #2ea3f62c;
+}
+
+.blocks {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    justify-content: center;
+    align-items: center;
+    .block {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        background-color: #ef2ef63f;
+        width: 80vw;
+        height: 500px;
+        ul {
+            margin-top: 40px;
+            margin-left: 40px;
+            li {
+                list-style: decimal;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
