@@ -1,0 +1,31 @@
+.plugin-layout {
+    position: relative;
+}
+
+.plugin-balls {
+    position: absolute;
+}
+
+.plugin-ball {
+    position: absolute;
+    width: 38px!important;
+    height: 38px!important;
+    transition: transform .12s ease,opacity .12s ease!important;
+    background-color: #2ea2f6!important;
+    border-radius: 50%;
+    cursor: pointer!important;
+    &__number {
+        width: 38px!important;
+        height: 38px!important;
+        text-align: center!important;
+        line-height: 32px!important;
+        border: 3px solid #fff!important;
+        box-shadow: 0 2px 8px rgba(0,0,0,.2)!important;
+        border-radius: 50%!important;
+        font-size: 16px!important;
+        font-family: Gordita-Bold!important;
+        font-weight: 700!important;
+        color: #fff!important;
+        background: #2ea2f6!important;
+    }
+}
