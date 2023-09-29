@@ -1,6 +1,6 @@
 import { toggleComment } from "./modules/toggleComment";
 import { sidebar } from "./modules/sidebar";
-import { bugSidebar } from "./modules/bug-sidebar";
+import { bugSidebar } from "./modules/bugSidebar";
 import { commentFunc } from "./modules/comment-func";
 
 

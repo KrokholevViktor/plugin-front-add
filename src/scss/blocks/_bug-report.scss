@@ -1,6 +1,7 @@
 .bug-report {
     display: none;
     position: absolute;
+    z-index: 9999;
     /* Стили для формы */
     &__form {
         width: 350px;
