@@ -50,13 +50,13 @@ export function commentFunc () {
             // Создаем шарик
             createPluginBall(xRelatively, yRelatively, xpath, ballsContainer);
 
-            // Вызываем makeScreenshot и передаем ей колбэк
-            makeScreenshot(formData);
+            // // Вызываем makeScreenshot и передаем ей колбэк
+            // makeScreenshot(formData);
 
             // Записываем данные о шарике в formData, включая XPath путь
-            formData.append('xRelatively', xRelatively);
-            formData.append('yRelatively', yRelatively);
-            formData.append('xpath', xpath);
+            // formData.append('xRelatively', xRelatively);
+            // formData.append('yRelatively', yRelatively);
+            // formData.append('xpath', xpath);
 
             //открываем форму Репортера и устанавливаем позицию молдалки под шариком
             bugReport.style.display = 'block';
@@ -67,66 +67,66 @@ export function commentFunc () {
 
            
 
-            const bugReportForm = document.querySelector('.bug-report__form'); // Выберите форму
-            const bugTitle = document.querySelector('#bug-title');
-            const bugDescription = document.querySelector('#bug-description');
-            const bugReportContainer = document.querySelector('.bug-report');
-            const bugReportCloseBtn = document.querySelector('.bug-report__cancel-button');
+            // const bugReportForm = document.querySelector('.bug-report__form'); // Выберите форму
+            // const bugTitle = document.querySelector('#bug-title');
+            // const bugDescription = document.querySelector('#bug-description');
+            // const bugReportContainer = document.querySelector('.bug-report');
+            // const bugReportCloseBtn = document.querySelector('.bug-report__cancel-button');
 
-            //Отравка формы
-            bugReportForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                formData.append('bugTitle', bugTitle.value);
-                formData.append('bugDescription', bugDescription.value);
+            // //Отравка формы
+            // bugReportForm.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     formData.append('bugTitle', bugTitle.value);
+            //     formData.append('bugDescription', bugDescription.value);
 
-                //Очищаю поля
-                bugTitle.value = '';
-                bugDescription.value = '';
+            //     //Очищаю поля
+            //     bugTitle.value = '';
+            //     bugDescription.value = '';
 
                 
                 
-                console.log('ВЫВОД ФОРМДАТЫ SUBMIT');
-                // Для проверки, выведем содержимое объекта FormData в консоль
-                formData.forEach(function (value, key) {
-                    console.log(key + ": " + value);
-                });
+            //     console.log('ВЫВОД ФОРМДАТЫ SUBMIT');
+            //     // Для проверки, выведем содержимое объекта FormData в консоль
+            //     formData.forEach(function (value, key) {
+            //         console.log(key + ": " + value);
+            //     });
 
-                // Сбрасываем formData
-                formData.delete('xRelatively');
-                formData.delete('yRelatively');
-                formData.delete('xpath');
-                formData.delete('screenshot');
-                formData.delete('bugTitle');
-                formData.delete('bugDescription');
-            })
+            //     // Сбрасываем formData
+            //     formData.delete('xRelatively');
+            //     formData.delete('yRelatively');
+            //     formData.delete('xpath');
+            //     formData.delete('screenshot');
+            //     formData.delete('bugTitle');
+            //     formData.delete('bugDescription');
+            // })
 
 
-            // Закрывает модалку и очищает поля формы
-            bugReportCloseBtn.addEventListener('click', () => {
-                //Очищаю поля
-                bugTitle.value = '';
-                bugDescription.value = '';
+            // // Закрывает модалку и очищает поля формы
+            // bugReportCloseBtn.addEventListener('click', () => {
+            //     //Очищаю поля
+            //     bugTitle.value = '';
+            //     bugDescription.value = '';
                 
-                // Теперь скройте модальное окно и покажите контейнер с кнопками навигации
-                bugReportContainer.style.display = 'none';
-                pluginContainer.style.display = 'block';
+            //     // Теперь скройте модальное окно и покажите контейнер с кнопками навигации
+            //     bugReportContainer.style.display = 'none';
+            //     pluginContainer.style.display = 'block';
 
-                // Сбрасываем formData
-                formData.delete('xRelatively');
-                formData.delete('yRelatively');
-                formData.delete('xpath');
-                formData.delete('screenshot');
-                formData.delete('bugTitle');
-                formData.delete('bugDescription');
+            //     // Сбрасываем formData
+            //     formData.delete('xRelatively');
+            //     formData.delete('yRelatively');
+            //     formData.delete('xpath');
+            //     formData.delete('screenshot');
+            //     formData.delete('bugTitle');
+            //     formData.delete('bugDescription');
 
-                console.log('ВЫВОД ФОРМДАТЫ ЗАКРЫТЬ');
-                // Для проверки, выведем содержимое объекта FormData в консоль
-                formData.forEach(function (value, key) {
-                    console.log(key + ": " + value);
-                });
+            //     console.log('ВЫВОД ФОРМДАТЫ ЗАКРЫТЬ');
+            //     // Для проверки, выведем содержимое объекта FormData в консоль
+            //     formData.forEach(function (value, key) {
+            //         console.log(key + ": " + value);
+            //     });
 
 
-            });
+            // });
         }
 
     });

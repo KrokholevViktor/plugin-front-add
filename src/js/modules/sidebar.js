@@ -1,3 +1,6 @@
+import { BugList } from './bugList';
+import { BugData } from './bugData';
+
 export function sidebar() {
     
     const tabButtons = document.querySelectorAll(".sidebar__tab");
