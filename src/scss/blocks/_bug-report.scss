@@ -3,6 +3,7 @@
     position: absolute;
     z-index: 9999;
     /* Стили для формы */
+    
     &__form {
         width: 350px;
         margin: 0 auto;
@@ -61,6 +62,7 @@
         color: white;
         cursor: pointer;
     }
+    
 }
 
 

@@ -84,12 +84,15 @@ export class DataCollector {
             // Получаем размеры видимой части страницы
             const screenWidth = window.innerWidth || document.documentElement.clientWidth;
             const screenHeight = window.innerHeight || document.documentElement.clientHeight;
-        
+
+            
             // Если элемент существует, отключаем его
             const pluginContainer = document.getElementById('pluginContainer');
             if (pluginContainer) {
                 pluginContainer.style.display = 'none';
             }
+
+
         
             // Создаем скриншот видимой части страницы
             html2canvas(document.body, {
@@ -104,6 +107,7 @@ export class DataCollector {
                 // Возвращаем Data URL
                 resolve(dataUrl);
             }).catch(reject);
+
         });
     }
 

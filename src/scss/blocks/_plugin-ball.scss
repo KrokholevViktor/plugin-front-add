@@ -15,6 +15,7 @@
     border-radius: 50%;
     cursor: pointer!important;
     &__number {
+        position: absolute;
         width: 38px!important;
         height: 38px!important;
         text-align: center!important;
@@ -28,4 +29,26 @@
         color: #fff!important;
         background: #2ea2f6!important;
     }
+    &__inner {
+        display: none;
+    }
+
+}
+
+.plugin-ball__number:hover + .plugin-ball__peek .plugin-ball__inner {
+    display: block; /* Отображение элемента при наведении на .plugin-ball__number */
+    position: absolute!important;
+    top: 2px!important;
+    left: 0px!important;
+    width: 260px!important;
+    padding-left: 42px!important;
+    background: #fff!important;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2)!important;
+    border-radius: 60px!important;
+    overflow: hidden!important;
+    transition: transform .12s ease,opacity .15s ease!important;
+    pointer-events: none!important;
+    transform-origin: left!important;
+    font-size: 10px;
+    z-index: 999999999999;
 }

@@ -19,17 +19,42 @@
 			
 					<label class="bug-report__input-label" for="bug-description">Описание бага:</label>
 					<textarea class="bug-report__textarea-field" id="bug-description" placeholder="Введите описание бага"></textarea>
-			
+					
+					<label class="bug-report__input-label" for="bug-actual">Фактический результат:</label>
+					<textarea class="bug-report__textarea-field" id="bug-actual" placeholder="Введите описание фактического результата"></textarea>
+
+					<label class="bug-report__input-label" for="bug-expected">Ожидаемый рузльтат:</label>
+					<textarea class="bug-report__textarea-field" id="bug-expected" placeholder="Введите описание ожидаемого результата"></textarea>
+
+					<label class="bug-report__input-label" for="bug-file">Выберите файл для ожидаемоего результата:</label>
+					<input class="bug-report__input-field" type="file" id="bug-file" name="bug-file">
+
+					<!-- Поле селекта "Приоритет" -->
+					<label class="bug-report__input-label" for="bug-priority">Приоритет:</label>
+					<select class="bug-report__select-field" id="bug-priority" name="bug-priority">
+					<option value="critical">Критичный</option>
+					<option value="medium" selected>Средний</option>
+					<option value="low">Низкий</option>
+					</select>
+
+					<!-- Поле селекта "Исполнитель" -->
+					<label class="bug-report__input-label" for="bug-executor">Исполнитель:</label>
+					<select class="bug-report__select-field" id="bug-executor" name="bug-executor">
+					<option value="frontend">Frontend</option>
+					<option value="backend">Backend</option>
+					<option value="both">Frontend и Backend</option>
+					</select>
+
 					<div class="bug-report__btn-wrapper">
 						<button class="bug-report__cancel-button" type="button">Закрыть</button>
-						<button class="bug-report__submit-button" type="submit">Отправить</button>
+						<button class="bug-report__submit-button" type="button">Отправить</button>
 					</div>
 				</form>
 			</div>
 		</div>
 		@@include('blocks/header.html')
 
-		<!-- обёртка благина -->
+		<!-- обёртка плагина -->
 		<div class="plugin-container" id="pluginContainer">
 
 			<!-- кнопка активации режима комментирования -->

@@ -17,15 +17,13 @@ export class ModalHandler {
         this.pluginContainer = document.getElementById('pluginContainer');
         this.inputSummary = document.querySelector('#bug-title');
         this.inputDescription = document.querySelector('#bug-description');
+        this.bugFileInput = document.getElementById('bug-file');
 
         // Проверяем существование элемента с классом .bug-report
         if (!this.modalElement) {
             throw new Error('Элемент с классом .bug-report не найден на странице.');
         }
         // Вызываем метод openModal при клике на любую точку страницы
-        document.addEventListener('click', (event) => {
-
-        });
         document.addEventListener('click', (event) => {
             // Получаем целевой элемент, на который кликнули
             const targetElement = event.target;
@@ -62,6 +60,11 @@ export class ModalHandler {
             await this.sendBugReport(this.formData); // Вызываем метод closeModal при клике
             event.stopPropagation();
         });
+
+        this.bugFileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            this.addToFormData("expectedScreenshot", file);
+        });
         
     }
 
@@ -81,7 +84,7 @@ export class ModalHandler {
                 const dataUrl = await this.dataCollector.makeScreenshot();
                 const dataBlob = this.dataURLToBlob(dataUrl)
         
-                this.addToFormData("file", dataBlob)
+                this.addToFormData("actualScreenshot", dataBlob)
     
                 this.modalElement.style.display = 'block';
                 this.modalElement.style.left = xClick - 19 + 'px';
