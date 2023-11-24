@@ -23,10 +23,10 @@ export function sidebar() {
 
 
     function toggleSidebar() {
-        const sidebarToggleBtn = document.getElementById("sidebarToggleBtn");
+        const fbrsidebarToggleBtn = document.getElementById("fbrsidebarToggleBtn");
         const sidebar = document.getElementById("sidebar");
 
-        sidebarToggleBtn.addEventListener("click", function () {
+        fbrsidebarToggleBtn.addEventListener("click", function () {
             sidebar.classList.toggle('sidebar--active');
         });
     }

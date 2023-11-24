@@ -1,4 +1,4 @@
-export function bugReportFunc(pluginContainer, formData) {
+export function bugReportFunc(fbrpluginContainer, formData) {
     
     
     

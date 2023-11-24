@@ -5,9 +5,9 @@ import { bugReportFunc } from "./bugReportFunc";
 export function commentFunc () {
 
     //Находим контейнер в котором будут храниться шарики
-    const ballsContainer = document.querySelector('.plugin-balls');
-    const bugReport = document.querySelector('.bug-report');
-    const pluginContainer = document.getElementById('pluginContainer');
+    const ballsContainer = document.querySelector('.FBRfbr-plugin-balls');
+    const bugReport = document.querySelector('.FBRfbr-bug-report');
+    const fbrpluginContainer = document.getElementById('fbrpluginContainer');
 
 
 
@@ -28,10 +28,10 @@ export function commentFunc () {
         const formData = new FormData();
 
         const target = event.target;
-        const isPluginContainer = target.classList.contains("plugin-container");
-        const isPluginLayout = target.classList.contains("plugin-layout");
+        const isfbrpluginContainer = target.classList.contains("fbr-plugin-container");
+        const isPluginLayout = target.classList.contains("FBRfbr-fbr-plugin-layout");
     
-        if (!isPluginContainer && !target.closest(".plugin-container") && !isPluginLayout && !target.closest(".plugin-layout")) {
+        if (!isfbrpluginContainer && !target.closest(".fbr-plugin-container") && !isPluginLayout && !target.closest(".FBRfbr-fbr-plugin-layout")) {
             const xClick = event.clientX + window.pageXOffset;
             const yClick = event.clientY + window.pageYOffset;
 
@@ -59,7 +59,7 @@ export function commentFunc () {
             // formData.append('xpath', xpath);
 
             //открываем форму Репортера и устанавливаем позицию молдалки под шариком
-            bugReport.style.display = 'block';
+            bugReport.style.display = 'block !important';
             bugReport.style.left = xElement + xRelatively - 19 + "px";
             bugReport.style.top = yElement + yRelatively + 24 + "px";
 
@@ -67,11 +67,11 @@ export function commentFunc () {
 
            
 
-            // const bugReportForm = document.querySelector('.bug-report__form'); // Выберите форму
-            // const bugTitle = document.querySelector('#bug-title');
-            // const bugDescription = document.querySelector('#bug-description');
-            // const bugReportContainer = document.querySelector('.bug-report');
-            // const bugReportCloseBtn = document.querySelector('.bug-report__cancel-button');
+            // const bugReportForm = document.querySelector('.FBRfbr-bug-report__form'); // Выберите форму
+            // const bugTitle = document.querySelector('#fbr-bug-title');
+            // const bugDescription = document.querySelector('#fbr-bug-description');
+            // const bugReportContainer = document.querySelector('.FBRfbr-bug-report');
+            // const bugReportCloseBtn = document.querySelector('.FBRfbr-bug-report__cancel-button');
 
             // //Отравка формы
             // bugReportForm.addEventListener('submit', (e) => {
@@ -109,7 +109,7 @@ export function commentFunc () {
                 
             //     // Теперь скройте модальное окно и покажите контейнер с кнопками навигации
             //     bugReportContainer.style.display = 'none';
-            //     pluginContainer.style.display = 'block';
+            //     fbrpluginContainer.style.display = 'block';
 
             //     // Сбрасываем formData
             //     formData.delete('xRelatively');
@@ -142,8 +142,8 @@ export function commentFunc () {
         const screenHeight = window.innerHeight || document.documentElement.clientHeight;
 
         // Если элемент существует, отключаем его
-        if (pluginContainer) {
-            pluginContainer.style.display = 'none';
+        if (fbrpluginContainer) {
+            fbrpluginContainer.style.display = 'none';
         }
 
         // Здесь сделаем скриншот видимой части страницы

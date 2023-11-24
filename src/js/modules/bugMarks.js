@@ -10,7 +10,7 @@ export class BugMarks {
   }
 
   renderBugMark() {
-    const bugListElement = document.querySelector('.plugin-balls');
+    const bugListElement = document.querySelector('.FBRfbr-plugin-balls');
     console.log("ПРОВЕРКА " + this.bugData.bugs);
     // Очищаем текущий список багов
     bugListElement.innerHTML = '';

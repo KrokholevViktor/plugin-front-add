@@ -1,9 +1,9 @@
-.plugin-container {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
+.fbr-plugin-container {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
     // background-color: rgba(0, 102, 255, 0.6);
-    pointer-events: none;
+    pointer-events: none !important;
+    z-index: 2147483600 !important;
 }
