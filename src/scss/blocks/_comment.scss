@@ -41,7 +41,7 @@
         align-items: center !important;
         box-shadow: 0 10px 35px 0 rgba(0,0,0,.15) !important;
         z-index: 2147483600 !important;
-        .fbr-comment__switch-icon-act {
+        .comment__switch-icon-act {
             display: none !important;
             z-index: 2147483600 !important;
         }
@@ -49,11 +49,11 @@
     &__switch-togle--active {
         left: 50% !important;
         z-index: 2147483600 !important;
-        .fbr-comment__switch-icon-act {
+        .comment__switch-icon-act {
             display: block !important;
             z-index: 2147483600 !important;
         }
-        .fbr-comment__switch-icon-unact {
+        .comment__switch-icon-unact {
             display: none !important;
             z-index: 2147483600 !important;
         }

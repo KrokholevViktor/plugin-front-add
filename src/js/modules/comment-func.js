@@ -5,9 +5,9 @@ import { bugReportFunc } from "./bugReportFunc";
 export function commentFunc () {
 
     //Находим контейнер в котором будут храниться шарики
-    const ballsContainer = document.querySelector('.FBRfbr-plugin-balls');
-    const bugReport = document.querySelector('.FBRfbr-bug-report');
-    const fbrpluginContainer = document.getElementById('fbrpluginContainer');
+    const ballsContainer = document.querySelector('.plugin-balls');
+    const bugReport = document.querySelector('.bug-report');
+    const pluginContainer = document.getElementById('pluginContainer');
 
 
 
@@ -28,10 +28,10 @@ export function commentFunc () {
         const formData = new FormData();
 
         const target = event.target;
-        const isfbrpluginContainer = target.classList.contains("fbr-plugin-container");
-        const isPluginLayout = target.classList.contains("FBRfbr-fbr-plugin-layout");
+        const ispluginContainer = target.classList.contains("plugin-container");
+        const isPluginLayout = target.classList.contains("plugin-layout");
     
-        if (!isfbrpluginContainer && !target.closest(".fbr-plugin-container") && !isPluginLayout && !target.closest(".FBRfbr-fbr-plugin-layout")) {
+        if (!ispluginContainer && !target.closest(".plugin-container") && !isPluginLayout && !target.closest(".plugin-layout")) {
             const xClick = event.clientX + window.pageXOffset;
             const yClick = event.clientY + window.pageYOffset;
 
@@ -67,66 +67,7 @@ export function commentFunc () {
 
            
 
-            // const bugReportForm = document.querySelector('.FBRfbr-bug-report__form'); // Выберите форму
-            // const bugTitle = document.querySelector('#fbr-bug-title');
-            // const bugDescription = document.querySelector('#fbr-bug-description');
-            // const bugReportContainer = document.querySelector('.FBRfbr-bug-report');
-            // const bugReportCloseBtn = document.querySelector('.FBRfbr-bug-report__cancel-button');
-
-            // //Отравка формы
-            // bugReportForm.addEventListener('submit', (e) => {
-            //     e.preventDefault();
-            //     formData.append('bugTitle', bugTitle.value);
-            //     formData.append('bugDescription', bugDescription.value);
-
-            //     //Очищаю поля
-            //     bugTitle.value = '';
-            //     bugDescription.value = '';
-
-                
-                
-            //     console.log('ВЫВОД ФОРМДАТЫ SUBMIT');
-            //     // Для проверки, выведем содержимое объекта FormData в консоль
-            //     formData.forEach(function (value, key) {
-            //         console.log(key + ": " + value);
-            //     });
-
-            //     // Сбрасываем formData
-            //     formData.delete('xRelatively');
-            //     formData.delete('yRelatively');
-            //     formData.delete('xpath');
-            //     formData.delete('screenshot');
-            //     formData.delete('bugTitle');
-            //     formData.delete('bugDescription');
-            // })
-
-
-            // // Закрывает модалку и очищает поля формы
-            // bugReportCloseBtn.addEventListener('click', () => {
-            //     //Очищаю поля
-            //     bugTitle.value = '';
-            //     bugDescription.value = '';
-                
-            //     // Теперь скройте модальное окно и покажите контейнер с кнопками навигации
-            //     bugReportContainer.style.display = 'none';
-            //     fbrpluginContainer.style.display = 'block';
-
-            //     // Сбрасываем formData
-            //     formData.delete('xRelatively');
-            //     formData.delete('yRelatively');
-            //     formData.delete('xpath');
-            //     formData.delete('screenshot');
-            //     formData.delete('bugTitle');
-            //     formData.delete('bugDescription');
-
-            //     console.log('ВЫВОД ФОРМДАТЫ ЗАКРЫТЬ');
-            //     // Для проверки, выведем содержимое объекта FormData в консоль
-            //     formData.forEach(function (value, key) {
-            //         console.log(key + ": " + value);
-            //     });
-
-
-            // });
+       
         }
 
     });
@@ -142,8 +83,8 @@ export function commentFunc () {
         const screenHeight = window.innerHeight || document.documentElement.clientHeight;
 
         // Если элемент существует, отключаем его
-        if (fbrpluginContainer) {
-            fbrpluginContainer.style.display = 'none';
+        if (pluginContainer) {
+            pluginContainer.style.display = 'none';
         }
 
         // Здесь сделаем скриншот видимой части страницы

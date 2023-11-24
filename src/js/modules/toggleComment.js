@@ -1,7 +1,7 @@
 export function toggleComment () {
-    const commentTogle = document.querySelector('#fbr-plugin-comment-togle');
-    const commentSwitch = document.querySelector('.fbr-comment__switch');
-    const commentSwitchToggle = document.querySelector('.fbr-comment__switch-togle');
+    const commentTogle = document.querySelector('#plugin-comment-togle');
+    const commentSwitch = document.querySelector('.comment__switch');
+    const commentSwitchToggle = document.querySelector('.comment__switch-togle');
     
     commentTogle.addEventListener('click', () => {
         // Получите текущее значение атрибута data-active
@@ -15,9 +15,9 @@ export function toggleComment () {
         }
         
         //Тоглится класс активности на свитче для css анимации
-        commentSwitch.classList.toggle('fbr-comment__switch--active')
+        commentSwitch.classList.toggle('comment__switch--active')
 
         //Тоглится класс активности на кнопке для css анимации
-        commentSwitchToggle.classList.toggle('fbr-comment__switch-togle--active')
+        commentSwitchToggle.classList.toggle('comment__switch-togle--active')
     });
 }

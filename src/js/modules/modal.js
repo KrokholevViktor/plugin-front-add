@@ -11,27 +11,27 @@ export class ModalHandler {
         this.bugData = new BugData();
         this.bugMarks = new BugMarks();
 
-        this.modalElement = document.querySelector('.FBRfbr-bug-report');
-        this.cancelButton = this.modalElement.querySelector('.FBRfbr-bug-report__cancel-button');
-        this.submitButton = this.modalElement.querySelector('.FBRfbr-bug-report__submit-button');
-        this.fbrpluginContainer = document.getElementById('fbrpluginContainer');
-        this.inputSummary = document.querySelector('#fbr-bug-title');
-        this.inputDescription = document.querySelector('#fbr-bug-description');
-        this.bugFileInput = document.getElementById('fbr-bug-file');
+        this.modalElement = document.querySelector('.bug-report');
+        this.cancelButton = this.modalElement.querySelector('.bug-report__cancel-button');
+        this.submitButton = this.modalElement.querySelector('.bug-report__submit-button');
+        this.pluginContainer = document.getElementById('pluginContainer');
+        this.inputSummary = document.querySelector('#bug-title');
+        this.inputDescription = document.querySelector('#bug-description');
+        this.bugFileInput = document.getElementById('bug-file');
 
-        // Проверяем существование элемента с классом .FBRfbr-bug-report
+        // Проверяем существование элемента с классом .bug-report
         if (!this.modalElement) {
-            throw new Error('Элемент с классом .FBRfbr-bug-report не найден на странице.');
+            throw new Error('Элемент с классом .bug-report не найден на странице.');
         }
         // Вызываем метод openModal при клике на любую точку страницы
         document.addEventListener('click', (event) => {
             // Получаем целевой элемент, на который кликнули
             const targetElement = event.target;
         
-            // Получаем контейнер с классом fbr-plugin-container
-            const container = document.querySelector('.fbr-plugin-container');
+            // Получаем контейнер с классом plugin-container
+            const container = document.querySelector('.plugin-container');
         
-            // Проверяем, является ли целевой элемент потомком контейнера с классом fbr-plugin-container
+            // Проверяем, является ли целевой элемент потомком контейнера с классом plugin-container
             const isInsideContainer = container.contains(targetElement);
         
             // Если клик был вне контейнера, выполняйте ваш код
@@ -41,10 +41,10 @@ export class ModalHandler {
             }
         });
 
-        // Находим кнопку с классом FBRfbr-bug-report__cancel-button
-        this.cancelButton = this.modalElement.querySelector('.FBRfbr-bug-report__cancel-button');
+        // Находим кнопку с классом bug-report__cancel-button
+        this.cancelButton = this.modalElement.querySelector('.bug-report__cancel-button');
         if (!this.cancelButton) {
-            throw new Error('Кнопка с классом .FBRfbr-bug-report__cancel-button не найдена в модальном окне.');
+            throw new Error('Кнопка с классом .bug-report__cancel-button не найдена в модальном окне.');
         }
 
         // Добавляем обработчик клика на кнопку
@@ -53,7 +53,7 @@ export class ModalHandler {
             event.stopPropagation();
         });
 
-        this.submitButton = this.modalElement.querySelector('.FBRfbr-bug-report__submit-button');
+        this.submitButton = this.modalElement.querySelector('.bug-report__submit-button');
 
         this.submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
@@ -80,7 +80,7 @@ export class ModalHandler {
                 this.addToFormData("heightRatio", heightRatio)
                 this.addToFormData("widthRatio", widthRatio)
 
-                createPluginBall(xRelatively, yRelatively, xpath, document.querySelector('.FBRfbr-plugin-balls'));
+                createPluginBall(xRelatively, yRelatively, xpath, document.querySelector('.plugin-balls'));
                 const dataUrl = await this.dataCollector.makeScreenshot();
                 const dataBlob = this.dataURLToBlob(dataUrl)
         
@@ -99,8 +99,8 @@ export class ModalHandler {
 
     closeModal() {
         // Закрываем модальное окно
-        this.fbrpluginContainer.style.display = 'block'
-        this.fbrpluginContainer.style.setProperty('display', 'block', 'important');
+        this.pluginContainer.style.display = 'block'
+        this.pluginContainer.style.setProperty('display', 'block', 'important');
         this.modalElement.style.display = 'none';
         this.modalElement.style.setProperty('display', 'none', 'important');
     }
@@ -166,8 +166,8 @@ export class ModalHandler {
             this.formData = new FormData();
             this.modalElement.style.display = 'none';
             this.modalElement.style.setProperty('display', 'none', 'important');
-            this.fbrpluginContainer.style.display = 'block';
-            this.fbrpluginContainer.style.setProperty('display', 'block', 'important');
+            this.pluginContainer.style.display = 'block';
+            this.pluginContainer.style.setProperty('display', 'block', 'important');
             this.bugMarks.renderBugMark()
         } catch (error) {
             console.error('Произошла ошибка:', error);

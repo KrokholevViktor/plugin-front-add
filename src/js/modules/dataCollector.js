@@ -9,7 +9,7 @@ export class DataCollector {
     initialize() {
         document.addEventListener('click', (event) => {
             // Проверяем, находится ли элемент внутри модального окна
-            if (!event.target.closest('.FBRfbr-bug-report')) {
+            if (!event.target.closest('.bug-report')) {
                 this.getXPath(event.target); 
             }
         });
@@ -87,9 +87,9 @@ export class DataCollector {
 
             
             // Если элемент существует, отключаем его
-            const fbrpluginContainer = document.getElementById('fbrpluginContainer');
-            if (fbrpluginContainer) {
-                fbrpluginContainer.style.display = 'none';
+            const pluginContainer = document.getElementById('pluginContainer');
+            if (pluginContainer) {
+                pluginContainer.style.display = 'none';
             }
 
 
