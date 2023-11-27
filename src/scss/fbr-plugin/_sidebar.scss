@@ -1,6 +1,5 @@
-.sidebar {
+.fbr-sidebar {
     pointer-events: all !important;
-    z-index: 998 !important;
     position: fixed !important;
     top: 0 !important;
     left: -282px !important; /* Скрываем сайдбар за пределами экрана */
@@ -20,11 +19,10 @@
     }
     &__toggle {
         pointer-events: all !important;
-        z-index: 999 !important;
         position: fixed !important;
         bottom: 15px !important;
         left: 15px !important;
-        z-index: 2147483600 !important;
+        z-index: 2147483601 !important;
         &-btn {
             width: 60px !important;
             height: 60px !important;
@@ -110,7 +108,7 @@
 }
 
 
-.sidebar {
+.fbr-sidebar {
         /* Кастомный скроллбар */
         &::-webkit-scrollbar {
             width: 5px !important; /* Ширина скроллбара */

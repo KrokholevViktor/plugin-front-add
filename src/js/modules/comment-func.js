@@ -5,8 +5,8 @@ import { bugReportFunc } from "./bugReportFunc";
 export function commentFunc () {
 
     //Находим контейнер в котором будут храниться шарики
-    const ballsContainer = document.querySelector('.plugin-balls');
-    const bugReport = document.querySelector('.bug-report');
+    const ballsContainer = document.querySelector('.fbr-plugin-balls');
+    const bugReport = document.querySelector('.fbr-bug-report');
     const pluginContainer = document.getElementById('pluginContainer');
 
 
@@ -28,10 +28,10 @@ export function commentFunc () {
         const formData = new FormData();
 
         const target = event.target;
-        const ispluginContainer = target.classList.contains("plugin-container");
-        const isPluginLayout = target.classList.contains("plugin-layout");
+        const ispluginContainer = target.classList.contains("fbr-plugin-container");
+        const isPluginLayout = target.classList.contains("fbr-plugin-layout");
     
-        if (!ispluginContainer && !target.closest(".plugin-container") && !isPluginLayout && !target.closest(".plugin-layout")) {
+        if (!ispluginContainer && !target.closest(".fbr-plugin-container") && !isPluginLayout && !target.closest(".fbr-plugin-layout")) {
             const xClick = event.clientX + window.pageXOffset;
             const yClick = event.clientY + window.pageYOffset;
 

@@ -9,7 +9,7 @@ export class DataCollector {
     initialize() {
         document.addEventListener('click', (event) => {
             // Проверяем, находится ли элемент внутри модального окна
-            if (!event.target.closest('.bug-report')) {
+            if (!event.target.closest('.fbr-bug-report')) {
                 this.getXPath(event.target); 
             }
         });
@@ -87,9 +87,9 @@ export class DataCollector {
 
             
             // Если элемент существует, отключаем его
-            const pluginContainer = document.getElementById('pluginContainer');
-            if (pluginContainer) {
-                pluginContainer.style.display = 'none';
+            const fbrpluginContainer = document.getElementById('fbrpluginContainer');
+            if (fbrpluginContainer) {
+                fbrpluginContainer.style.display = 'none';
             }
 
 
@@ -99,7 +99,7 @@ export class DataCollector {
                 width: screenWidth,
                 height: screenHeight,
                 scrollX: window.scrollX,
-                scrollY: window.scrollY,
+                scrollY: 0 - window.scrollY,
             }).then(function (canvas) {
                 // Получаем данные из Canvas в формате Data URL (бинарные данные в виде строки)
                 const dataUrl = canvas.toDataURL('image/jpeg'); // Указываем формат изображения

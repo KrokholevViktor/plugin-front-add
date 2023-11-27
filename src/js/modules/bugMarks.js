@@ -10,7 +10,7 @@ export class BugMarks {
   }
 
   renderBugMark() {
-    const bugListElement = document.querySelector('.plugin-balls');
+    const bugListElement = document.querySelector('.fbr-plugin-balls');
     console.log("ПРОВЕРКА " + this.bugData.bugs);
     // Очищаем текущий список багов
     bugListElement.innerHTML = '';
@@ -18,14 +18,14 @@ export class BugMarks {
     this.bugData.bugs.forEach((bug, index) => {
         // Создаем ваш элемент "ball" для каждого бага
         const ball = document.createElement("div");
-        ball.classList.add("plugin-ball");
+        ball.classList.add("fbr-plugin-ball");
         ball.innerHTML = `
-            <div class="plugin-ball__number">${bug.bugNumber}</div>
-            <div class="plugin-ball__peek">
-                <div class="plugin-ball__inner">
-                    <div class="plugin-ball__author">${bug.taskKey}</div>
-                    <div class="plugin-ball__date">${bug.OSVersion}</div>
-                    <div class="plugin-ball__title">${bug.summary}</div>
+            <div class="fbr-plugin-ball__number">${bug.bugNumber}</div>
+            <div class="fbr-plugin-ball__peek">
+                <div class="fbr-plugin-ball__inner">
+                    <div class="fbr-plugin-ball__author">${bug.taskKey}</div>
+                    <div class="fbr-plugin-ball__date">${bug.OSVersion}</div>
+                    <div class="fbr-plugin-ball__title">${bug.summary}</div>
                 </div>
             </div>
         `;

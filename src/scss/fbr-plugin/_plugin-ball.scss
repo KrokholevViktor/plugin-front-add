@@ -1,14 +1,14 @@
-.plugin-layout {
+.fbr-plugin-layout {
     position: relative !important;
     z-index: 2147483600 !important;
 }
 
-.plugin-balls {
+.fbr-plugin-balls {
     position: absolute !important;
     z-index: 2147483600 !important;
 }
 
-.plugin-ball {
+.fbr-plugin-ball {
     position: absolute !important;
     width: 38px !important;
     height: 38px !important;
@@ -40,7 +40,7 @@
 
 }
 
-.plugin-ball__number:hover + .plugin-ball__peek .plugin-ball__inner {
+.fbr-plugin-ball__number:hover + .fbr-plugin-ball__peek .fbr-plugin-ball__inner {
     display: block !important; /* Отображение элемента при наведении на .plugin-ball__number */
     position: absolute !important;
     top: 2px !important;
@@ -55,5 +55,5 @@
     pointer-events: none !important;
     transform-origin: left !important;
     font-size: 10px !important;
-    z-index: 2147483600 !important;
+    z-index: 2147483601 !important;
 }

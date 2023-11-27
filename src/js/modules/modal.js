@@ -1,7 +1,9 @@
 import { DataCollector } from './dataCollector';
 import { BugMarks } from './bugMarks';
+import { BugList } from './bugList';
 import { BugData } from './bugData';
 import { createPluginBall } from "./createBall";
+
 
 
 export class ModalHandler {
@@ -10,18 +12,23 @@ export class ModalHandler {
         this.formData = new FormData();
         this.bugData = new BugData();
         this.bugMarks = new BugMarks();
+        this.bugList = new BugList();
 
-        this.modalElement = document.querySelector('.bug-report');
-        this.cancelButton = this.modalElement.querySelector('.bug-report__cancel-button');
-        this.submitButton = this.modalElement.querySelector('.bug-report__submit-button');
+        this.modalElement = document.querySelector('.fbr-bug-report');
+        this.cancelButton = this.modalElement.querySelector('.fbr-bug-report__cancel-button');
+        this.submitButton = this.modalElement.querySelector('.fbr-bug-report__submit-button');
         this.pluginContainer = document.getElementById('pluginContainer');
         this.inputSummary = document.querySelector('#bug-title');
         this.inputDescription = document.querySelector('#bug-description');
+        this.inputActualResult = document.querySelector('#bug-actual');
+        this.inputExpectedResult  = document.querySelector('#bug-expected');
         this.bugFileInput = document.getElementById('bug-file');
+        this.selectedPriority = document.getElementById('bug-priority');
+        this.selectedExecutor = document.getElementById('bug-executor');
 
-        // Проверяем существование элемента с классом .bug-report
+        // Проверяем существование элемента с классом .fbr-bug-report
         if (!this.modalElement) {
-            throw new Error('Элемент с классом .bug-report не найден на странице.');
+            throw new Error('Элемент с классом .fbr-bug-report не найден на странице.');
         }
         // Вызываем метод openModal при клике на любую точку страницы
         document.addEventListener('click', (event) => {
@@ -29,7 +36,7 @@ export class ModalHandler {
             const targetElement = event.target;
         
             // Получаем контейнер с классом plugin-container
-            const container = document.querySelector('.plugin-container');
+            const container = document.querySelector('.fbr-plugin-container');
         
             // Проверяем, является ли целевой элемент потомком контейнера с классом plugin-container
             const isInsideContainer = container.contains(targetElement);
@@ -42,9 +49,9 @@ export class ModalHandler {
         });
 
         // Находим кнопку с классом bug-report__cancel-button
-        this.cancelButton = this.modalElement.querySelector('.bug-report__cancel-button');
+        this.cancelButton = this.modalElement.querySelector('.fbr-bug-report__cancel-button');
         if (!this.cancelButton) {
-            throw new Error('Кнопка с классом .bug-report__cancel-button не найдена в модальном окне.');
+            throw new Error('Кнопка с классом .fbr-bug-report__cancel-button не найдена в модальном окне.');
         }
 
         // Добавляем обработчик клика на кнопку
@@ -53,7 +60,7 @@ export class ModalHandler {
             event.stopPropagation();
         });
 
-        this.submitButton = this.modalElement.querySelector('.bug-report__submit-button');
+        this.submitButton = this.modalElement.querySelector('.fbr-bug-report__submit-button');
 
         this.submitButton.addEventListener('click', async (event) => {
             event.preventDefault();
@@ -80,7 +87,7 @@ export class ModalHandler {
                 this.addToFormData("heightRatio", heightRatio)
                 this.addToFormData("widthRatio", widthRatio)
 
-                createPluginBall(xRelatively, yRelatively, xpath, document.querySelector('.plugin-balls'));
+                createPluginBall(xRelatively, yRelatively, xpath, document.querySelector('.fbr-plugin-balls'));
                 const dataUrl = await this.dataCollector.makeScreenshot();
                 const dataBlob = this.dataURLToBlob(dataUrl)
         
@@ -142,6 +149,13 @@ export class ModalHandler {
 
         this.addToFormData("summary", this.inputSummary.value)
         this.addToFormData("description", this.inputDescription.value)
+        this.addToFormData("actualResult", this.inputActualResult.value)
+        this.addToFormData("expectedResult", this.inputExpectedResult.value)
+        this.addToFormData("priority", this.selectedPriority.value)
+        this.addToFormData("executor", this.selectedExecutor.value)
+      
+        
+        
 
         // for (const pair of this.formData.entries()) {
         //     console.log(`1Ключ: ${pair[0]}, Значение: ${pair[1]}`);
@@ -169,6 +183,7 @@ export class ModalHandler {
             this.pluginContainer.style.display = 'block';
             this.pluginContainer.style.setProperty('display', 'block', 'important');
             this.bugMarks.renderBugMark()
+            this.bugList.renderBugList()
         } catch (error) {
             console.error('Произошла ошибка:', error);
         }

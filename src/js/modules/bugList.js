@@ -9,7 +9,7 @@ export class BugList {
   }
 
   renderBugList() {
-    const bugListElement = document.querySelector('.bug-container');
+    const bugListElement = document.querySelector('.fbr-bug-container');
 
     // Очищаем текущий список багов
     // bugListElement.innerHTML = '';
@@ -18,15 +18,15 @@ export class BugList {
     this.bugData.bugs.forEach((bug, index) => {
         // Создаем ваш элемент "ball" для каждого бага
         const ball = document.createElement("div");
-        ball.classList.add(".bug-container");
+        ball.classList.add(".fbr-bug-container");
         ball.innerHTML = `
-            <div class="bug-card">
-            <div class="bug-card__header">
-              <div class="bug-card__number">${bug.bugNumber}</div>
-              <div class="bug-card__author">Lil Pump</div>
-              <div class="bug-card__date">29.12.23</div>
+            <div class="fbr-bug-card">
+            <div class="fbr-bug-card__header">
+              <div class="fbr-bug-card__number">${bug.bugNumber}</div>
+              <div class="fbr-bug-card__author">Lil Pump</div>
+              <div class="fbr-bug-card__date">29.12.23</div>
             </div>
-            <div class="bug-card__title">${bug.summary}</div>
+            <div class="fbr-bug-card__title">${bug.summary}</div>
           </div>
         `;
 
